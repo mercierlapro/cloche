@@ -1,0 +1,55 @@
+//---------------------------------------------------------------------------
+
+#ifndef IHMH
+#define IHMH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <IdBaseComponent.hpp>
+#include <IdComponent.hpp>
+#include <IdTCPClient.hpp>
+#include <IdTCPConnection.hpp>
+#include "cloche.h"
+#include "Server.h"
+#include <IdCustomTCPServer.hpp>
+#include <IdTCPServer.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <IdContext.hpp>
+#include <Vcl.ExtCtrls.hpp>
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TGroupBox *GroupBox1;
+	TButton *btnPetite;
+	TButton *btnInter;
+	TButton *btnMoy;
+	TButton *btnGrande;
+	TIdTCPServer *Server1;
+	TRichEdit *Trame;
+	TShape *Shape1;
+	TButton *Button1;
+	TButton *Button3;
+	TButton *Button4;
+	TTimer *Timer1;
+	void __fastcall btnPetiteClick(TObject *Sender);
+	void __fastcall btnInterClick(TObject *Sender);
+	void __fastcall btnMoyClick(TObject *Sender);
+	void __fastcall btnGrandeClick(TObject *Sender);
+	void __fastcall Server1Execute(TIdContext *AContext);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall Server1Connect(TIdContext *AContext);
+private:	// Déclarations utilisateur
+public: TIdTCPClient* client;
+		cloche * trame;	// Déclarations utilisateur
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif

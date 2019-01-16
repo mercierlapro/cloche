@@ -1,0 +1,40 @@
+//---------------------------------------------------------------------------
+
+#ifndef clocheH
+#define clocheH
+#include <IdBaseComponent.hpp>
+#include <IdComponent.hpp>
+#include <IdTCPClient.hpp>
+#include <IdTCPConnection.hpp>
+
+//*********************************************************************************************
+//* Programme : cloche.cpp date : 12/12/2018
+//*---------------------------------------------------------------------------------------------------------
+//*
+//*Programmeurs : DHERBOMEZ VUILLEMENOT BILLARD
+//*classe : BTSSN2
+//*
+//*--------------------------------------------------------------------------------------------------------
+//* BUT : Faire sonner les cloches
+//* Classe cloche
+//*********************************************************************************************
+// Définition de la classe
+
+class cloche{
+
+	private:
+	TIdTCPClient * Client;
+
+
+
+	public:
+
+	void trameModbus(unsigned char msg,TIdTCPClient * Client);
+	void retourMarteau(TIdTCPClient * Client);
+
+
+};
+
+
+
+#endif
