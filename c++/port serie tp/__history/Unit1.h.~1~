@@ -1,0 +1,35 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include "Unit2.h"
+
+//---------------------------------------------------------------------------
+class TForm1 : public TForm
+{
+__published:	// Composants gérés par l'EDI
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TLabel *Label1;
+
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+
+private:	// Déclarations utilisateur
+public:		// Déclarations utilisateur
+	  com *RS232;
+	__fastcall TForm1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TForm1 *Form1;
+//---------------------------------------------------------------------------
+#endif
