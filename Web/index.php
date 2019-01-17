@@ -17,7 +17,7 @@
 		if (isset($_POST['button']) && !empty($_POST['username']) && !empty($_POST['password']))
 		{
 
-			$Utilisateur = new utilisateur($_POST['username'],$_POST['password'],'localhost','tp1login','root','');
+			$Utilisateur = new utilisateur($_POST['username'],$_POST['password'],'localhost','cloche','root','');
 			$Utilisateur->compare('register');
 
 			if($Utilisateur->isConnect())
@@ -36,7 +36,7 @@
 		if(isset($_SESSION["username"]))
 		{
 
-			$Utilisateur = new utilisateur($_SESSION['username'],$_SESSION['password'],'localhost','tp1login','root','','register');
+			$Utilisateur = new utilisateur($_SESSION['username'],$_SESSION['password'],'localhost','cloche','root','','register');
 			?>	
 				<center>
 					<!--formulaire pour choisir une cloche-->

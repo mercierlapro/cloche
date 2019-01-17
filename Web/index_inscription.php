@@ -16,7 +16,7 @@
 	if (isset($_POST['button2']) && !empty($_POST['username2']) && !empty($_POST['password2']))
 	{
 
-		$Utilisateur = new utilisateur($_POST['username2'],$_POST['password2'],'localhost','tp1login','root','','register');
+		$Utilisateur = new utilisateur($_POST['username2'],$_POST['password2'],'localhost','cloche','root','','register');
 
 		if($Utilisateur->isConnect())
 		{
